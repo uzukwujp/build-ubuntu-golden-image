@@ -10,7 +10,7 @@ jobs:
     name: Validate Packer Template
     runs-on: ubuntu-latest
     env:
-      PRODUCT_VERSION: "1.11.0"
+      PRODUCT_VERSION: "1.10.2"
       TEMPLATE_PATH: "template/ubuntu-golden-image.pkr.hcl"
 
     steps:
