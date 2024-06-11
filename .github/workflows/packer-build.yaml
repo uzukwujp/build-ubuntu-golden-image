@@ -30,6 +30,7 @@ jobs:
 
     - name: Validate Packer template
       run: packer validate "${{env.TEMPLATE_PATH}}"
+      
 
   build:
     env:
