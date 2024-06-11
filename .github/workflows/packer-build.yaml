@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PRODUCT_VERSION: "1.11.0"
-      TEMPLATE_PATH: "../../template/ubuntu-golden-image.pkr.hcl"
+      TEMPLATE_PATH: "/template/ubuntu-golden-image.pkr.hcl"
 
     steps:
     
@@ -24,7 +24,9 @@ jobs:
         version: "${{env.PRODUCT_VERSION}}"
 
     - name: Run `packer init`
-      run: packer init "${{env.TEMPLATE_PATH}}"
+      run: |
+        ls -a
+        packer init "${{env.TEMPLATE_PATH}}"
 
     - name: Validate Packer template
       run: packer validate "${{env.TEMPLATE_PATH}}"
