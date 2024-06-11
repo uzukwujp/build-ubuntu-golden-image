@@ -32,6 +32,9 @@ jobs:
       run: packer validate "${{env.TEMPLATE_PATH}}"
 
   build:
+    env:
+      PRODUCT_VERSION: "1.10.2"
+      TEMPLATE_PATH: "template/ubuntu-golden-image.pkr.hcl"
     name: Build Packer Template
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
