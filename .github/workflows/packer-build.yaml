@@ -49,7 +49,9 @@ jobs:
         version: "${{env.PRODUCT_VERSION}}"
 
     - name: Run `packer init`
-      run: packer init "${{env.TEMPLATE_PATH}}"
+      run: |
+        ls -a
+        packer init "${{env.TEMPLATE_PATH}}"
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
