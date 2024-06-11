@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PRODUCT_VERSION: "1.11.0"
-      TEMPLATE_PATH: "/template/ubuntu-golden-image.pkr.hcl"
+      TEMPLATE_PATH: "template/ubuntu-golden-image.pkr.hcl"
 
     steps:
     
