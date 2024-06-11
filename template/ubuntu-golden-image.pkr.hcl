@@ -25,7 +25,7 @@ build {
   ]
   provisioner "shell" {
     scripts = [
-      "../scripts/hello-world.sh"
+      "scripts/hello-world.sh"
     ]
   }
 }
