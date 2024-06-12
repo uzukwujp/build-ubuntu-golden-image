@@ -64,5 +64,8 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.REGION }}
 
+    - name: Get short SHA
+      run: echo "SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_ENV
+
     - name: Build Packer template
-      run: packer build "${{env.TEMPLATE_PATH}}"
+      run: packer build -var "commit_sha=$SHORT_SHA" "${{env.TEMPLATE_PATH}}"
