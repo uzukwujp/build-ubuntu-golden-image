@@ -1,4 +1,8 @@
 
+variable "commit_sha" {
+  type    = string
+  default = ""
+}
 
 packer {
   required_plugins {
@@ -16,6 +20,9 @@ source "amazon-ebs" "ubuntu" {
   region        = "us-east-1"
   source_ami = "ami-04b70fa74e45c3917"
   ssh_username = "ubuntu"
+  tags = {
+    CommitSHA   = var.commit_sha
+  }
 }
 
 build {

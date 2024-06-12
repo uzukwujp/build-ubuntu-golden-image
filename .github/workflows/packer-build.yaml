@@ -60,4 +60,4 @@ jobs:
         aws-region: ${{ secrets.REGION }}
 
     - name: Build Packer template
-      run: packer build "${{env.TEMPLATE_PATH}}"
+      run: packer build -var "commit_sha=${{github.sha::7}}" "${{env.TEMPLATE_PATH}}"
